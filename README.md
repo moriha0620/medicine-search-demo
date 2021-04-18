@@ -1,24 +1,28 @@
-# README
+アプリケーション名：　medicine-search-31954（おくすり検索）
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+アプリケーション概要：　ユーザーの選択した症状に合わせて、おすすめの一般用医薬品を出力する
 
-Things you may want to cover:
+URL：https://medicine-search-31954.herokuapp.com/callback
 
-* Ruby version
+ボットのベーシックID:	@542ikdnu
 
-* System dependencies
+QRコード：　
 
-* Configuration
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+利用方法：　上記のボットのベーシックIDもしくはQRコードからLINEアカウント「おくすり検索」を友だち追加。
+　　　　　　最初になにか文字を入れるとbotから返信が来るのでそちらに沿って症状を選択していくことで
+　　　　　　必要な医薬品を検索することができる。
 
-* Services (job queues, cache servers, search engines, etc.)
+目指した課題解決	このアプリケーションを通じて、どのような人の、どのような課題を解決しようとしているのかを記述。
 
-* Deployment instructions
+洗い出した要件	スプレッドシートにまとめた要件定義を記述。
 
-* ...
+実装した機能についての画像やGIFおよびその説明	実装した機能について、それぞれどのような特徴があるのかを列挙する形で記述。画像はGyazoで、GIFはGyazoGIFで撮影すること。
+
+実装予定の機能	洗い出した要件の中から、今後実装予定の機能がある場合は、その機能を記述。
+
+データベース設計	ER図等を添付。
+
+ローカルでの動作方法	git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記述。この時、アプリケーション開発に使用した環境を併記することを忘れないこと（パッケージやRubyのバージョンなど）。
