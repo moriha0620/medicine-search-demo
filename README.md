@@ -27,7 +27,7 @@ QRコード：
 
 [![Image from Gyazo](https://i.gyazo.com/eeb161ec1ae45581b8d93ff744fd6a3a.gif)](https://gyazo.com/eeb161ec1ae45581b8d93ff744fd6a3a)
 
-医薬品の剤形表示機能　同じ効能効果の医薬品であれば剤形をユーザーが選択できるよう、検索結果によってはカルーセルテンプレートが表示され横スクロールで剤形を表示できる。
+医薬品の剤形表示機能　同じ効能効果の医薬品であれば剤形や使用感をユーザーが選択できるよう、検索結果によってはWebhookイベントオブジェクトのカルーセルテンプレートが表示され横スクロールで剤形を表示できる。
 
 [![Image from Gyazo](https://i.gyazo.com/aaad9bfacccf165adc8102fc0e871768.gif)](https://gyazo.com/aaad9bfacccf165adc8102fc0e871768)
 
