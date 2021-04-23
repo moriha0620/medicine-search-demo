@@ -8,7 +8,8 @@ URL：https://medicine-search-31954.herokuapp.com/callback
 
 ボットのベーシックID:	@542ikdnu
 
-QRコード：　
+QRコード：
+
 [![Image from Gyazo](https://i.gyazo.com/84937b85f6595adc36d09226ac76d2da.png)](https://gyazo.com/84937b85f6595adc36d09226ac76d2da)
 
 
@@ -35,6 +36,8 @@ QRコード：　
 ドラッグストア検索機能　google Maps APIを活用することで、ドラッグストアの検索を可能とする。これにより旅行先など土地勘のない場所で体調不良となっても自身の現在位置から近くのドラッグストアを割り出し、希望の医薬品を購入できる。
 
 フローチャート設計：
+
+[![Image from Gyazo](https://i.gyazo.com/248419052d7ee53beea7be9d4bfc142c.png)](https://gyazo.com/248419052d7ee53beea7be9d4bfc142c)
 
 
 使用技術：
