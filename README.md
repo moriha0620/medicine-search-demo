@@ -2,31 +2,61 @@
 
 アプリケーション名：　medicine-search-31954（おくすり検索）
 
-アプリケーション概要：　ユーザーの選択した症状に合わせて、おすすめの一般用医薬品を出力する
+アプリケーション概要：　ユーザーの選択した症状に合わせておすすめの一般用医薬品を表示する
 
 URL：https://medicine-search-31954.herokuapp.com/callback
 
 ボットのベーシックID:	@542ikdnu
 
 QRコード：　
-
+[![Image from Gyazo](https://i.gyazo.com/84937b85f6595adc36d09226ac76d2da.png)](https://gyazo.com/84937b85f6595adc36d09226ac76d2da)
 
 
 
 利用方法：　上記のボットのベーシックIDもしくはQRコードからLINEアカウント「おくすり検索」を友だち追加。
-最初になにか文字を入れるとbotから返信が来るのでそちらに沿って症状を選択していくことで
-必要な医薬品を検索することができる。
+　　　　　最初になにか文字を入れるとbotから返信が来るのでそちらに沿って症状を選択していくことで
+　　　　　必要な医薬品を検索することができる。
 
-目指した課題解決	このアプリケーションを通じて、どのような人の、どのような課題を解決しようとしているのかを記述。
+目指した課題解決：　このアプリケーションを通じて、高齢者を中心にドラッグストアへ直接行かなくても自身の症状に合わせた
+　　　　　　　　　一般用医薬品を表示し、楽天市場から購入することができる。また店頭で迷わず一般用医薬品を購入することができる。
+　　　　　　　　　これにより自身のちょっとした不調に対してセルフメディケーションを達成することができ医療機関への受診、薬局での
+　　　　　　　　　薬の処方といった通院にかかる時間を省き、生活の質を向上できる。一方で人口減少、超高齢社会における医師不足からの
+　　　　　　　　　医療機関受診の機会喪失に対する一助となる。
 
-洗い出した要件	スプレッドシートにまとめた要件定義を記述。
+要件定義：　
+・症状選択による医薬品検索機能
+Webhookイベントオブジェクトの中でもボタンテンプレートを採用し、症状の選択肢を４つに限定することで
+高齢者でも回答しやすいようハードルを下げている。
+[![Image from Gyazo](https://i.gyazo.com/4b4e47cf87a745134559eebb2f98b6f9.gif)](https://gyazo.com/4b4e47cf87a745134559eebb2f98b6f9)
 
-実装した機能についての画像やGIFおよびその説明	実装した機能について、それぞれどのような特徴があるのかを列挙する形で記述。画像はGyazoで、GIFはGyazoGIFで撮影すること。
+・楽天市場へのリンク機能
+テンプレートの定めるプロパティに沿ってリンクを設定し、楽天市場でも医薬品のパッケージが明確に設定されているサイトを選択した。
+[![Image from Gyazo](https://i.gyazo.com/eeb161ec1ae45581b8d93ff744fd6a3a.gif)](https://gyazo.com/eeb161ec1ae45581b8d93ff744fd6a3a)
 
-実装予定の機能	洗い出した要件の中から、今後実装予定の機能がある場合は、その機能を記述。
+・医薬品の剤形表示機能
+同じ効能効果の医薬品であれば剤形をユーザーが選択できるよう、検索結果によってはカルーセルテンプレートが表示され
+横スクロールで剤形を表示できる。
+[![Image from Gyazo](https://i.gyazo.com/aaad9bfacccf165adc8102fc0e871768.gif)](https://gyazo.com/aaad9bfacccf165adc8102fc0e871768)
+
+
+実装予定の機能：
+・ドラッグストア検索機能
+google Maps APIを活用することで、ドラッグストアの検索を可能とする。これにより旅行先など土地勘のない場所で体調不良となっても
+自身の現在位置から近くのドラッグストアを割り出し、希望の医薬品を購入できる。
 
 フローチャート設計	
+%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20style%3D%22edgeStyle%3DorthogonalEdgeStyle%3Bshape%3DflexArrow%3Brounded%3D0%3BorthogonalLoop%3D1%3BjettySize%3Dauto%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.25%3BexitDx%3D0%3BexitDy%3D0%3BfillColor%3D%23FF6666%3B%22%20edge%3D%221%22%20source%3D%223%22%20parent%3D%221%22%3E%3CmxGeometry%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22340%22%20y%3D%2280%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%223%22%20value%3D%22%E7%97%87%E7%8A%B6%E3%81%AF%E3%81%A9%E3%82%8C%EF%BC%9F%22%20style%3D%22swimlane%3BfontStyle%3D0%3BchildLayout%3DstackLayout%3Bhorizontal%3D1%3BstartSize%3D26%3BfillColor%3Dnone%3BhorizontalStack%3D0%3BresizeParent%3D1%3BresizeParentMax%3D0%3BresizeLast%3D0%3Bcollapsible%3D1%3BmarginBottom%3D0%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%2230%22%20y%3D%2250%22%20width%3D%22210%22%20height%3D%22120%22%20as%3D%22geometry%22%3E%3CmxRectangle%20x%3D%22110%22%20y%3D%2240%22%20width%3D%2260%22%20height%3D%2226%22%20as%3D%22alternateBounds%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%224%22%20value%3D%221.%E9%A2%A8%E9%82%AA%E3%80%81%E7%86%B1%E3%80%81%E9%A0%AD%E7%97%9B%26%2310%3B2.%E8%83%83%E8%85%B8%E3%80%81%E3%81%8A%E3%81%97%E3%82%8A%EF%BC%88%E6%B6%88%E5%8C%96%E5%99%A8%EF%BC%89%26%2310%3B3.%E8%82%8C%E3%81%AE%E3%81%AA%E3%82%84%E3%81%BF%E3%80%81%E8%99%AB%E5%88%BA%E3%81%95%E3%82%8C%26%2310%3B4.%E7%9B%AE%E3%80%81%E8%80%B3%E3%80%81%E9%BC%BB%E3%80%81%E5%8F%A3%26%2310%3B%22%20style%3D%22text%3Balign%3Dleft%3BverticalAlign%3Dtop%3BspacingLeft%3D4%3BspacingRight%3D4%3Boverflow%3Dhidden%3Brotatable%3D0%3Bpoints%3D%5B%5B0%2C0.5%5D%2C%5B1%2C0.5%5D%5D%3BportConstraint%3Deastwest%3Brounded%3D0%3BfillColor%3D%232a2a2a%3BstrokeColor%3D%23f0f0f0%3B%22%20vertex%3D%221%22%20parent%3D%223%22%3E%3CmxGeometry%20y%3D%2226%22%20width%3D%22210%22%20height%3D%2294%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%225%22%20style%3D%22edgeStyle%3DorthogonalEdgeStyle%3Bshape%3DflexArrow%3Brounded%3D0%3BorthogonalLoop%3D1%3BjettySize%3Dauto%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.25%3BexitDx%3D0%3BexitDy%3D0%3BentryX%3D-0.012%3BentryY%3D0.043%3BentryDx%3D0%3BentryDy%3D0%3BentryPerimeter%3D0%3BfillColor%3D%23FF6666%3B%22%20edge%3D%221%22%20source%3D%229%22%20target%3D%2212%22%20parent%3D%221%22%3E%3CmxGeometry%20relative%3D%221%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%226%22%20style%3D%22edgeStyle%3DorthogonalEdgeStyle%3Bshape%3DflexArrow%3Brounded%3D0%3BorthogonalLoop%3D1%3BjettySize%3Dauto%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.5%3BexitDx%3D0%3BexitDy%3D0%3BfillColor%3D%23FF6666%3B%22%20edge%3D%221%22%20source%3D%229%22%20parent%3D%221%22%3E%3CmxGeometry%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22660%22%20y%3D%22220%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22630%22%20y%3D%22110%22%2F%3E%3CmxPoint%20x%3D%22630%22%20y%3D%22220%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%227%22%20style%3D%22edgeStyle%3DorthogonalEdgeStyle%3Bshape%3DflexArrow%3Brounded%3D0%3BorthogonalLoop%3D1%3BjettySize%3Dauto%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.75%3BexitDx%3D0%3BexitDy%3D0%3BfillColor%3D%23FF6666%3B%22%20edge%3D%221%22%20source%3D%229%22%20parent%3D%221%22%3E%3CmxGeometry%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22660%22%20y%3D%22380%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22610%22%20y%3D%22140%22%2F%3E%3CmxPoint%20x%3D%22610%22%20y%3D%22380%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%228%22%20style%3D%22edgeStyle%3DorthogonalEdgeStyle%3Bshape%3DflexArrow%3Brounded%3D0%3BorthogonalLoop%3D1%3BjettySize%3Dauto%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D1%3BexitDx%3D0%3BexitDy%3D0%3BfillColor%3D%23FF6666%3B%22%20edge%3D%221%22%20source%3D%229%22%20parent%3D%221%22%3E%3CmxGeometry%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22660%22%20y%3D%22490%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22570%22%20y%3D%22170%22%2F%3E%3CmxPoint%20x%3D%22570%22%20y%3D%22490%22%2F%3E%3CmxPoint%20x%3D%22660%22%20y%3D%22490%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%229%22%20value%3D%223%20%E8%82%8C%E3%81%AE%E3%81%AA%E3%82%84%E3%81%BF%E3%80%81%E8%99%AB%E5%88%BA%E3%81%95%E3%82%8C%22%20style%3D%22swimlane%3BfontStyle%3D0%3BchildLayout%3DstackLayout%3Bhorizontal%3D1%3BstartSize%3D26%3BfillColor%3Dnone%3BhorizontalStack%3D0%3BresizeParent%3D1%3BresizeParentMax%3D0%3BresizeLast%3D0%3Bcollapsible%3D1%3BmarginBottom%3D0%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22340%22%20y%3D%2250%22%20width%3D%22210%22%20height%3D%22120%22%20as%3D%22geometry%22%3E%3CmxRectangle%20x%3D%2210%22%20y%3D%2240%22%20width%3D%2260%22%20height%3D%2226%22%20as%3D%22alternateBounds%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2210%22%20value%3D%221.%E6%B9%BF%E7%96%B9%E3%83%BB%E7%9A%AE%E8%86%9A%E7%82%8E%26%2310%3B2.%E6%95%8F%E6%84%9F%E8%82%8C%E3%83%BB%E4%B9%BE%E7%87%A5%E8%82%8C%26%2310%3B3.%E8%99%AB%E5%88%BA%E3%81%95%E3%82%8C%26%2310%3B4.%E6%B0%B4%E8%99%AB%22%20style%3D%22text%3Balign%3Dleft%3BverticalAlign%3Dtop%3BspacingLeft%3D4%3BspacingRight%3D4%3Boverflow%3Dhidden%3Brotatable%3D0%3Bpoints%3D%5B%5B0%2C0.5%5D%2C%5B1%2C0.5%5D%5D%3BportConstraint%3Deastwest%3Brounded%3D0%3BfillColor%3D%232a2a2a%3BstrokeColor%3D%23f0f0f0%3B%22%20vertex%3D%221%22%20parent%3D%229%22%3E%3CmxGeometry%20y%3D%2226%22%20width%3D%22210%22%20height%3D%2294%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2211%22%20value%3D%223-1%20%E6%B9%BF%E7%96%B9%E3%83%BB%E7%9A%AE%E8%86%9A%E7%82%8E%22%20style%3D%22swimlane%3BfontStyle%3D0%3BchildLayout%3DstackLayout%3Bhorizontal%3D1%3BstartSize%3D26%3BfillColor%3Dnone%3BhorizontalStack%3D0%3BresizeParent%3D1%3BresizeParentMax%3D0%3BresizeLast%3D0%3Bcollapsible%3D1%3BmarginBottom%3D0%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22670%22%20y%3D%2250%22%20width%3D%22210%22%20height%3D%22120%22%20as%3D%22geometry%22%3E%3CmxRectangle%20x%3D%2210%22%20y%3D%2240%22%20width%3D%2260%22%20height%3D%2226%22%20as%3D%22alternateBounds%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2212%22%20value%3D%221.%E3%83%95%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%88F%26%2310%3B%22%20style%3D%22text%3Balign%3Dleft%3BverticalAlign%3Dtop%3BspacingLeft%3D4%3BspacingRight%3D4%3Boverflow%3Dhidden%3Brotatable%3D0%3Bpoints%3D%5B%5B0%2C0.5%5D%2C%5B1%2C0.5%5D%5D%3BportConstraint%3Deastwest%3Brounded%3D0%3BfillColor%3D%232a2a2a%3BstrokeColor%3D%23f0f0f0%3B%22%20vertex%3D%221%22%20parent%3D%2211%22%3E%3CmxGeometry%20y%3D%2226%22%20width%3D%22210%22%20height%3D%2294%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2213%22%20value%3D%223-2%20%E6%95%8F%E6%84%9F%E8%82%8C%E3%83%BB%E4%B9%BE%E7%87%A5%E8%82%8C%22%20style%3D%22swimlane%3BfontStyle%3D0%3BchildLayout%3DstackLayout%3Bhorizontal%3D1%3BstartSize%3D26%3BfillColor%3Dnone%3BhorizontalStack%3D0%3BresizeParent%3D1%3BresizeParentMax%3D0%3BresizeLast%3D0%3Bcollapsible%3D1%3BmarginBottom%3D0%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22670%22%20y%3D%22170%22%20width%3D%22210%22%20height%3D%22120%22%20as%3D%22geometry%22%3E%3CmxRectangle%20x%3D%2210%22%20y%3D%2240%22%20width%3D%2260%22%20height%3D%2226%22%20as%3D%22alternateBounds%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2214%22%20value%3D%221.%E3%83%94%E3%82%A2%E3%82%BD%E3%83%B3HP%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%22%20style%3D%22text%3Balign%3Dleft%3BverticalAlign%3Dtop%3BspacingLeft%3D4%3BspacingRight%3D4%3Boverflow%3Dhidden%3Brotatable%3D0%3Bpoints%3D%5B%5B0%2C0.5%5D%2C%5B1%2C0.5%5D%5D%3BportConstraint%3Deastwest%3Brounded%3D0%3BfillColor%3D%232a2a2a%3BstrokeColor%3D%23f0f0f0%3B%22%20vertex%3D%221%22%20parent%3D%2213%22%3E%3CmxGeometry%20y%3D%2226%22%20width%3D%22210%22%20height%3D%2294%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2215%22%20value%3D%223-3%20%E8%99%AB%E5%88%BA%E3%81%95%E3%82%8C%22%20style%3D%22swimlane%3BfontStyle%3D0%3BchildLayout%3DstackLayout%3Bhorizontal%3D1%3BstartSize%3D26%3BfillColor%3Dnone%3BhorizontalStack%3D0%3BresizeParent%3D1%3BresizeParentMax%3D0%3BresizeLast%3D0%3Bcollapsible%3D1%3BmarginBottom%3D0%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22670%22%20y%3D%22300%22%20width%3D%22210%22%20height%3D%22120%22%20as%3D%22geometry%22%3E%3CmxRectangle%20x%3D%2210%22%20y%3D%2240%22%20width%3D%2260%22%20height%3D%2226%22%20as%3D%22alternateBounds%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2216%22%20value%3D%221.%E3%83%A0%E3%83%92%E3%82%A2%E3%83%AB%E3%83%95%E3%82%A1EX%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%22%20style%3D%22text%3Balign%3Dleft%3BverticalAlign%3Dtop%3BspacingLeft%3D4%3BspacingRight%3D4%3Boverflow%3Dhidden%3Brotatable%3D0%3Bpoints%3D%5B%5B0%2C0.5%5D%2C%5B1%2C0.5%5D%5D%3BportConstraint%3Deastwest%3Brounded%3D0%3BfillColor%3D%232a2a2a%3BstrokeColor%3D%23f0f0f0%3B%22%20vertex%3D%221%22%20parent%3D%2215%22%3E%3CmxGeometry%20y%3D%2226%22%20width%3D%22210%22%20height%3D%2294%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2217%22%20value%3D%223-4%20%E6%B0%B4%E8%99%AB%22%20style%3D%22swimlane%3BfontStyle%3D0%3BchildLayout%3DstackLayout%3Bhorizontal%3D1%3BstartSize%3D26%3BfillColor%3Dnone%3BhorizontalStack%3D0%3BresizeParent%3D1%3BresizeParentMax%3D0%3BresizeLast%3D0%3Bcollapsible%3D1%3BmarginBottom%3D0%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22670%22%20y%3D%22440%22%20width%3D%22210%22%20height%3D%22120%22%20as%3D%22geometry%22%3E%3CmxRectangle%20x%3D%2210%22%20y%3D%2240%22%20width%3D%2260%22%20height%3D%2226%22%20as%3D%22alternateBounds%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2218%22%20value%3D%221.%E3%83%94%E3%83%AD%E3%82%A8%E3%83%BC%E3%82%B9Z%E6%B6%B2%26%2310%3B%22%20style%3D%22text%3Balign%3Dleft%3BverticalAlign%3Dtop%3BspacingLeft%3D4%3BspacingRight%3D4%3Boverflow%3Dhidden%3Brotatable%3D0%3Bpoints%3D%5B%5B0%2C0.5%5D%2C%5B1%2C0.5%5D%5D%3BportConstraint%3Deastwest%3Brounded%3D0%3BfillColor%3D%232a2a2a%3BstrokeColor%3D%23f0f0f0%3B%22%20vertex%3D%221%22%20parent%3D%2217%22%3E%3CmxGeometry%20y%3D%2226%22%20width%3D%22210%22%20height%3D%2294%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E
 
 
-
-ローカルでの動作方法	git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記述。この時、アプリケーション開発に使用した環境を併記することを忘れないこと（パッケージやRubyのバージョンなど）。
+使用技術：
+・Ruby 2.6.5
+・Ruby on Rails 6.0.3.6
+・MySQL 5.6.50
+・Homebrew 3.0.9
+・rbenv 1.1.2
+・Bundler 2.1.4
+・yarn 1.22.10
+・Messaging API/LINE Developers
+・ngrok 2.3.35
+・heroku 7.47.11
+・RSpec
